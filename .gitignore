@@ -1,0 +1,17 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Raw NHANES data
+raw_xpt/
+
+# Generated outputs and datasets
+output/
+
+# Temporary files
+*.log
+*.zip
+.DS_Store
+.ipynb_checkpoints/
