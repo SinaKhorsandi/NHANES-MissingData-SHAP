@@ -185,7 +185,48 @@ python stage3_figure2_clean.py \
 - **Locally verified Git revision for Stage 3 scripts:** `4032bdb` on branch `stage3-final`.
 - **Git exclusions:** `.venv/`, `raw_xpt/`, and `output/` are excluded from version control.
 - The repo contains code and analysis instructions. The preprocessed Stage 1 CSV, source XPT files, fitted models, and participant-level analysis outputs are **not bundled**; obtain the public NHANES source files from the CDC and prepare the Stage 1 inputs before rerunning.
-- **Verification status:** saved model metrics, data hash, and output structure have been audited; an independent full rerun of all SHAP computations from source has **not** been claimed.
+- **Verification status (updated 2026-11-14):** The 25-split CV was rerun on the original Linux host. SHAP was recomputed on Windows using fitted models from that Linux CV rerun. Key-aligned numerical comparisons of CV performance, SHAP importance, SHAP stability, and manuscript Tables 1 and 2 passed. This does not establish a single-platform, end-to-end rerun starting from raw NHANES XPT files.
+
+
+### Stage 3 follow-up verification (2026-11-14)
+
+The follow-up work was performed on branch `stage3-followup`.
+The original Stage 3 analysis commit remains `4032bdb`.
+
+- **Primary CV:** a fresh 25-split run on the original Linux
+  host reproduced all 150 split-level performance results.
+- **SHAP:** SHAP values were recomputed on Windows using the
+  models saved by the Linux CV rerun. All 150 additivity
+  checks passed. The original and rerun global-importance
+  tables matched across 1,650 rows.
+- **Stability and reporting:** the 150 split-level SHAP
+  stability results and manuscript Tables 1 and 2 matched
+  the original outputs in key-aligned comparisons.
+- **Sample-size sensitivity:** a fresh 25-split run on the
+  original Linux host reproduced the original results,
+  including 100 split-level metric rows.
+- **RF permutation-cycle sensitivity:** the split-1
+  comparison of 5 versus 10 cycles was reproduced;
+  all three 10-cycle additivity checks passed.
+- **WTMEC2YR sensitivity:** the 25-split weighted-fitting
+  analysis reproduced all 150 metric rows. An independent
+  audit recalculated the saved performance metrics and
+  verified the participant assignments and evaluation sets.
+- **Figures:** Figure 1 and separate LR/RF rank-bump figures
+  were regenerated from the rerun outputs at 300 DPI.
+  Visual review found no problematic label overlap.
+- **Cross-platform qualification:** Windows refitting of
+  the KNN arm in the sample-size-matched sensitivity
+  produced small numerical differences from the original
+  Linux results. Median/Mode matched; a fresh Linux
+  rerun reproduced the original KNN results. The exact
+  platform-dependent numerical mechanism was not
+  established.
+- **Scope:** these checks do not constitute external
+  validation or a full complex-survey inferential analysis.
+  Participant-level split and prediction files remain private
+  and are not included in Git.
+
 
 ## Scientific limitations
 
