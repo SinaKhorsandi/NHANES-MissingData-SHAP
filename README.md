@@ -215,13 +215,15 @@ The original Stage 3 analysis commit remains `4032bdb`.
 - **Figures:** Figure 1 and separate LR/RF rank-bump figures
   were regenerated from the rerun outputs at 300 DPI.
   Visual review found no problematic label overlap.
-- **Cross-platform qualification:** Windows refitting of
-  the KNN arm in the sample-size-matched sensitivity
-  produced small numerical differences from the original
-  Linux results. Median/Mode matched; a fresh Linux
-  rerun reproduced the original KNN results. The exact
-  platform-dependent numerical mechanism was not
-  established.
+### Cross-platform limitations
+
+SHAP was recomputed on Windows using fitted models from the
+Linux CV rerun. In the sample-size-matched sensitivity,
+Windows refitting of the KNN arm showed small numerical
+differences from the original Linux results. Median/Mode
+matched, and a fresh Linux rerun reproduced the original
+KNN results. The exact cause of the cross-platform numerical
+differences has not been established.
 - **Scope:** these checks do not constitute external
   validation or a full complex-survey inferential analysis.
   Participant-level split and prediction files remain private

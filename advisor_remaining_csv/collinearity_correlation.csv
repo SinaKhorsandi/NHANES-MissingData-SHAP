@@ -1,0 +1,3 @@
+feature_1,feature_2,method,correlation,n_complete_cases
+BMXWAIST,BMXBMI,Pearson,0.905391469129,4031
+BMXWAIST,BMXBMI,Spearman,0.909406144578,4031
