@@ -2,7 +2,9 @@
 
 **How do missing-data handling strategies affect the stability of SHAP explanations when predicting self-reported history of a diabetes diagnosis?**
 
-This repository contains Python code for a reproducible analysis of **NHANES 2017–2018**. It compares three missing-data handling strategies across two classification models and evaluates both predictive performance and the agreement of their SHAP explanations.
+This repository contains Python code for the original, **three-strategy Stage 3** analysis of **NHANES 2017–2018**, comparing predictive performance and SHAP agreement across two classification models.
+
+> **Stage 4 extension (PROVISIONAL):** A fourth missing-data strategy, multiple imputation by chained equations (MICE, `m=5`), has also been evaluated with the same 25 outer splits and paired SHAP protocol. The Stage 5-10 independent replay has passed its recorded computational checks; **advisor approval remains pending**. This README retains the historical Stage 3 findings below. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the four-strategy extension, exact run provenance, statistical caveats, and release gates.
 
 > **Outcome definition:** The binary target `diabetes_reported` is derived from the survey question `DIQ010` (`1 = yes`, `2 = no`). It represents **a participant's self-reported history of being told they have diabetes**, not laboratory-confirmed diabetes, a clinical diagnosis established by this study, or prospective diabetes risk.
 

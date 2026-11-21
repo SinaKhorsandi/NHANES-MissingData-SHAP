@@ -1,0 +1,58 @@
+{
+  "documentation_commit": "see Git commit history; not embedded to avoid circular references",
+  "documented_nonexact_components": [
+    "4 inner RF tuning cells in losing candidates differ slightly (maximum approximately 1.09e-6)",
+    "time-to-run fields differ",
+    "four PDF files differ in metadata/hashes while extracted text and renders match",
+    "Stage 10 Tables 8 and 9 preserve historical complete-case collinearity references",
+    "Stage 3 was not rerun in Stage 11"
+  ],
+  "environment": {
+    "os_family": "Linux",
+    "package_version_check": "PASS",
+    "pinned_packages": 21,
+    "pip_check": "PASS",
+    "python": "3.13.3",
+    "requirements_file": "requirements.txt"
+  },
+  "frozen_computational_source_commit": "2f7bca74b4a1972c6209ed581d700fd1a842b086",
+  "inference_caveats": [
+    "repeated-CV folds overlap; corrected t intervals are approximate",
+    "Holm adjustment applies separately to AUC and Brier test families",
+    "LR SHAP uses log-odds; RF SHAP uses probability scale",
+    "MICE sample_posterior=True and n_iter=10 are not evidence of convergence"
+  ],
+  "local_private_integrity_record": "kept separately in Git-ignored local outputs; NOT distributed",
+  "methods": [
+    "CCA",
+    "Median/Mode",
+    "KNN k=5",
+    "MICE m=5"
+  ],
+  "notes": "See REPRODUCIBILITY.md for methods, precise run directories and release gates",
+  "original_features": 11,
+  "outer_splits": 25,
+  "prediction_models": [
+    "Logistic Regression",
+    "Random Forest"
+  ],
+  "previous_stage4_source_commit": "4e054df",
+  "project": "SINA / NHANES 2017-2018: missing-data strategies and SHAP stability",
+  "protocol_deviation": "Stage 4 computation preceded required advisor approval; advisor review pending",
+  "public_integrity_file": "SHA256SUMS",
+  "record_date_utc": "2026-11-21",
+  "release_status": "PROVISIONAL_ADVISOR_APPROVAL_PENDING",
+  "replay_scope": "Stage 5-10 rerun under fixed Stage 3 reference; not a fresh external cohort or independent code implementation",
+  "schema": "sina-stage11-public-reproducibility-manifest-v1",
+  "scientific_checks": {
+    "stage10_reporting": "PASS; 9 CSV tables and 4 PNGs byte-identical; 4 PDFs render-identical",
+    "stage5_final_performance": "PASS; 50/50 rows identical except runtime",
+    "stage5_mice_models": "PASS; 375/375 model and imputer artifacts byte-identical",
+    "stage6_seed_corrected_shap": "PASS; 250 fresh draw computations and 25 canonical comparisons",
+    "stage7_shap_stability": "PASS; 300/300 paired results recalculated",
+    "stage8_diagnostics": "PASS; 125 MICE records and 16 summary rows",
+    "stage9_corrected_inference": "PASS; 48/48 rows, 456 numeric cells; 2 Holm-significant tests, neither involving MICE"
+  },
+  "stage3_source": "historically verified; NOT independently rerun from NHANES raw data in Stage 11",
+  "target": "self-reported history of diabetes diagnosis (DIQ010=1/2), not lab diagnosis or prospective risk"
+}
